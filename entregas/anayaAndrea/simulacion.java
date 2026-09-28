@@ -1,9 +1,7 @@
 import java.util.Random;
 
-/** Orquesta la simulación de la fila única del CCCF. */
 public class Simulacion {
 
-    // Del enunciado
     private final double probabilidadLlegada;
     private final double probabilidadAburrirse;
     private final int minutoInicioReglas;
@@ -11,7 +9,6 @@ public class Simulacion {
     private final int periodoAburrimiento;
     private final int maximoPersonas;
 
-    // Supuestos propios (el enunciado no los da)
     private final double probabilidadPreferente;
     private final double probabilidadColado;
     private final double probabilidadEntrega;
@@ -71,7 +68,6 @@ public class Simulacion {
         estadisticas.imprimirResumen(extendido, fila.tamano());
     }
 
-    /** Con la fila llena, quien intenta entrar puede desistir. */
     private boolean seIncorpora(boolean reglas) {
         if (reglas && fila.estaLlena() && azar.nextDouble() < probabilidadDesistir) {
             estadisticas.registrarDesistio();
@@ -94,7 +90,6 @@ public class Simulacion {
         }
     }
 
-    /** Quien se cuela decide su sitio: justo detrás de un conocido de la fila. */
     private void colarse(int minuto) {
         if (!fila.estaVacia() && azar.nextDouble() < probabilidadColado && seIncorpora(true)) {
             int posicionConocido = azar.nextInt(fila.tamano());
@@ -103,14 +98,12 @@ public class Simulacion {
         }
     }
 
-    /** Un tercero deja sus compras a alguien de la fila: no cambia la fila. */
     private void entregarCompras() {
         if (!fila.estaVacia() && azar.nextDouble() < probabilidadEntrega) {
             estadisticas.registrarEntrega();
         }
     }
 
-    /** Quien lleva más de esperaMaxima minutos se va, desde cualquier posición. */
     private void aburrirse(int minuto) {
         for (int i = fila.tamano() - 1; i >= 0; i--) {
             boolean llevaMucho = fila.clienteEn(i).minutosEsperando(minuto) > esperaMaxima;
