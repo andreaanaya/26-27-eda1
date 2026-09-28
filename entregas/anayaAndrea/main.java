@@ -1,50 +1,14 @@
-  private final int MAXIMO_PERSONAS = 30;
-    private final double PROBABILIDAD_ABURRIRSE = 0.30;
-@mmasias
-mmasias
-last week
-Owner
-Mejor inicializarlo en el constructor
+/** Punto de entrada: ejecuta el reto base y el reto extendido. */
+public class Main {
 
-@andreaanaya	Reply...
-mmasias
-mmasias reviewed last week
-entregas/moralesLucas/reto-001/Fila.java
-Comment on lines +48 to +50
-        if (!hayGente()) {
-            return null;
-        }
-@mmasias
-mmasias
-last week
-Owner
-Recuérdame que comentemos esto en clase: hay que evitarlo
+    public static void main(String[] args) {
+        Simulacion simulacion = new Simulacion();
 
-@andreaanaya	Reply...
-mmasias
-mmasias reviewed last week
-entregas/moralesLucas/reto-001/Fila.java
-        return numeroClientes;
+        System.out.println("=== RETO BASE (240 min, 4 horas) ===");
+        simulacion.ejecutar(240, false);
+
+        System.out.println();
+        System.out.println("=== RETO EXTENDIDO (120 min, 2 horas) ===");
+        simulacion.ejecutar(120, true);
     }
-
-    public Cliente obtenerPrimero() {
-@mmasias
-mmasias
-last week
-Owner
-Qué diferencia hay entre obtenerPrimero() y sacarPrimero()?
-
-@andreaanaya	Reply...
-mmasias
-mmasias reviewed last week
-entregas/moralesLucas/reto-001/Fila.java
-        return true;
-    }
-
-    public boolean colocarDetrasDeConocido(Cliente cliente) {
-@mmasias
-mmasias
-last week
-Owner
-Lo mismo: comentamos esto en clase: ¿qué implica que la fila sea la que coloca a alguien detrás de un conocido? ¿La fila rompe sus propias reglas? Recuérdamelo en clase para debatirlo!
-
+}
