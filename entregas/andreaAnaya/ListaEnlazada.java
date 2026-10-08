@@ -22,7 +22,7 @@ public class ListaEnlazada {
         Nodo dummy = new Nodo(-1);
         dummy.sig = cabeza;
 
-        Nodo anterior = dummy;      
+        Nodo anterior = dummy;
         Nodo actual = cabeza;
 
         while (actual != null) {
@@ -42,7 +42,6 @@ public class ListaEnlazada {
     }
 
     public void eliminarRepetidosSinDummy() {
-
         while (cabeza != null && cabeza.sig != null && cabeza.dato == cabeza.sig.dato) {
             int valor = cabeza.dato;
             while (cabeza != null && cabeza.dato == valor) {
