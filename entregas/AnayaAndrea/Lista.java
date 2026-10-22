@@ -67,6 +67,4 @@ public class Lista<T> {
     public int comparaciones() {
         return comparaciones;
     }
-} {
-    
-}
+} 

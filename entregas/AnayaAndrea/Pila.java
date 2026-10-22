@@ -26,6 +26,4 @@ public class Pila<T> {
     public int tamano() {
         return tamano;
     }
-} {
-    
-}
+} 
