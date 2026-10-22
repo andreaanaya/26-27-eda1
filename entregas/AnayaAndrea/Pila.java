@@ -1,4 +1,4 @@
-public public class Pila<T> {
+public class Pila<T> {
     private Nodo<T> cima;
     private int tamano;
 

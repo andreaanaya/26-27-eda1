@@ -1,4 +1,4 @@
-public public class Lista<T> {
+public class Lista<T> {
     private Nodo<T> cabeza;
     private Nodo<T> ultimo;
     private int tamano;
